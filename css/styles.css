@@ -346,10 +346,6 @@ body {
 
 /*--------------------------FUNCTIONALITY----------------------------*/
 
-.functionality-item {
-    border-bottom: 1px solid var(--header-border-color, #E7E9FC);
-}
-
 .functionality-title {
     font-weight: 500;
     font-size: 20px;
@@ -378,5 +374,7 @@ body {
 }
 
 .functionality-card {
+    border: 1px solid #E7E9FC;
     margin: 32px 0;
+    padding-left: 16px;
 }
