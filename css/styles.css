@@ -7,12 +7,28 @@
     --second-background-color:#E7E9FC;
     --button-active-color: #4D5AE5;
     --header-footer-background-color: #2E2F42;
+    --header-border-color: #E7E9FC;
     --second-background-color: #F4F4FD;
     --hero-btn-color: #4D5AE5;
     --body-background-color: #FFFFFF; 
-
-
 }
+
+p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -28,7 +44,57 @@ body {
     text-decoration: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1158px;
+    padding: 0 15px;
+    margin: 0 auto;
+    outline: 2px solid red;
+
+}
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
 /* ----------------------------------HEADER---------------------------------------------------------*/
+
+.header {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--header-border-color, #E7E9FC);
+}
+
+.header-list {
+    display: flex;
+    gap: 40px;
+}
+
+.address-list {
+    display: flex;
+    gap: 40px;
+}
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.header-container {
+    display: flex;
+}
 
 .logo-web {
     font-family: 'Raleway', sans-serif;
@@ -38,6 +104,7 @@ body {
         letter-spacing: 0.03em;
         text-transform: uppercase;
         color: #4D5AE5;
+        margin-right: 76px ;
 }
 
 .logo-studio {
@@ -85,16 +152,27 @@ body {
 /*---------------------------------------HERO-----------------------------------------------*/
 .hero {
     background-color: #2E2F42;
+    height: 600px;
+    padding: 188px 0 292px 0;
+    text-align: center;
+    display: flex;
+  
 }
 .hero-title {
+    width: 496px;
     font-weight: 700;
     font-size: 56px;
     line-height: 1.07;
     text-align: center;
     letter-spacing: 0.02em;
     color: #FFFFFF;
+    margin:0 auto;
+    
 }
 .hero-button {
+    display: block;
+    min-width: 169px;
+    height: 56px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -102,7 +180,10 @@ body {
     letter-spacing: 0.04em;
     color: #FFFFFF;
     cursor: pointer;
+    border-radius: 4px;
     background: #4D5AE5;
+    justify-content: center;
+    margin: 48px auto 0 auto;
 }
 
 .hero-button:is(:hover, :focus) {
@@ -111,12 +192,14 @@ body {
 
 /*-----------------------------------FEATURES-----------------------*/
 
+
 .features-title {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--title-text-color, #2E2F42);
+    margin-bottom: 8px;
 }
 
 .features-text {
@@ -125,9 +208,18 @@ body {
 }
 
 
+.features-item {
+    width: 264px;
+}
+
+.features-list {
+    display: flex;
+    flex-basis: calc((100% - 72px) / 4);
+    gap: 24px;
+}
+
 
 /*--------------------------DOING-------------------------------------*/
-
 .doing-title {
     font-weight: 700;
     font-size: 36px;
@@ -136,8 +228,14 @@ body {
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--title-text-color, #2E2F42);
+    padding-bottom: 72px;
 }
 
+.doing-list {
+    display: flex;
+    flex-basis: calc((100% - 48px) / 3);
+    gap: 24px;
+}
 /*----------------------------TEAM--------------------------*/
 
 .team {
@@ -155,6 +253,8 @@ body {
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--title-text-color, #2E2F42);
+    padding-top: 120px;
+    padding-bottom: 72px;
 }
 
 .member-name {
@@ -169,11 +269,30 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+.team-list {
+    display: flex;
+    flex-basis: calc((100% - 72px) / 4);
+    gap: 24px;
+}
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+    gap: 8px;
+}
 
 /*-----------------------FOOTER--------------*/
 
 .footer {
     background: #2E2F42;
+    height: 312px;
+}
+
+.footer-about {
+    width: 264px;
+    padding: 100px 0;
 }
 
 .footer-logo-studio {
@@ -184,21 +303,26 @@ body {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #F4F4FD;
-
-}
-.footer-logo-studio:is(:hover, :focus) {
-    color: #404BBF;
-    background-color: #404BBF;
 }
 
 .footer-text {
+    width: 264px;
+    margin-top: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #F4F4FD;
+
 }
 
 /*--------------------------FILTER----------------------------------*/
-
+.filters-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24PX;
+    margin-top: 96px;
+} 
 
 .filter-btn {
     font-family: 'Roboto', sans-serif;
@@ -208,6 +332,9 @@ body {
     letter-spacing: 0.04em;
     color: var(--button-active-color, #4D5AE5);
     cursor: pointer;
+    border: 1px solid #E7E9FC;
+    border-radius: 4px;
+    padding: 12px 24px;
     background-color: var(--second-background-color, #F4F4FD );
 }
 
@@ -219,12 +346,17 @@ body {
 
 /*--------------------------FUNCTIONALITY----------------------------*/
 
+.functionality-item {
+    border-bottom: 1px solid var(--header-border-color, #E7E9FC);
+}
+
 .functionality-title {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--title-text-color, #2E2F42);
+    margin-bottom: 8px;
 }
 
 .functionality-text {
@@ -234,3 +366,17 @@ body {
     color: var(--text-color, #434455);
 }
 
+.functionality-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 24px;
+    padding: 72px 0 120px 0;
+}
+
+.functionality-list li {
+    flex-basis: calc((100% - 48px) / 3);
+}
+
+.functionality-card {
+    margin: 32px 0;
+}
